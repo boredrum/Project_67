@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    script(src="/socket.io/socket.io.js")
+    script(src="/js/app.js" defer)
+    link(rel='stylesheet', href='/css/style.css')
+    title Chat
+  body
+    .wrapper
+      form.form-save(action='/save-chat' method='POST')
+        label(for='chat') 
+        ul.chat
+        button.btn-save(type='submit') Press here to SAVE
+      form.form-msg(action='/send-msg' method='POST')
+        label(for='message') 
+        input(type='text' name='msg' id='msg' required)
+        button.btn-msg(type='submit') Send
+    .login
+      .user-name
+        label(for='username') Enter your name:
+        input(type='text' name='username' autocomplete="off" required )
+        button.btn-name(type='button') Enter to chat
